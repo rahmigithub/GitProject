@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commit Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="my-4">Commit Details</h1>
+
+    <div class="card">
+        <div class="card-header">
+            Commit Information
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Hash: <span th:text="${commit.hash}">commit hash</span></h5>
+            <!--            <p class="card-text">Date: <span th:text="${#dates.format(commit.date, 'yyyy-MM-dd HH:mm:ss')}">commit date</span></p>-->
+            <p class="card-text">TimeStamp: <span th:text="${commit.date}">commit date</span></p>
+            <p class="card-text">Message: <span th:text="${commit.message}">commit message</span></p>
+            <p class="card-text">Author: <span th:text="${commit.author.name}">author name</span></p>
+            <p class="card-text">RepoName: <span th:text="${commit.repoName}">repo name</span></p>
+
+        </div>
+        <div class="card-footer text-muted">
+            <a class="btn btn-primary" th:href="@{/commits}">Back to List</a>
+            <a class="btn btn-secondary" th:href="@{/}">Back to Home</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
